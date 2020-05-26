@@ -14,15 +14,25 @@ activity$date <- as.Date(activity$date)
 ```
 
 ## What is mean total number of steps taken per day?
+```{r}
+sum.step <- tapply(activity$steps, activity$date, sum)
+sum.step <- sum.step[!is.na(sum.step)]
+hist(sum.step)
+```
 
-
+```{r}
+summary(sum.step)
+```
 
 ## What is the average daily activity pattern?
-
-
+```{r}
+```
 
 ## Imputing missing values
-
+```{r}
+```
 
 
 ## Are there differences in activity patterns between weekdays and weekends?
+```{r}
+```
