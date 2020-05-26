@@ -5,7 +5,6 @@ output:
     keep_md: true
 ---
 
-
 ## Loading and preprocessing the data
 
 ```r
@@ -22,7 +21,7 @@ total.step <- tapply(activity$steps, activity$date, sum, na.rm=TRUE)
 hist(total.step, xlab='Total number of steps per day', main='Histogram of the total number of steps per day')
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
 
 Mean and Median of the total number of steps per day
 
@@ -43,7 +42,7 @@ int.step <- tapply(activity$steps, activity$interval, mean, na.rm=TRUE)
 plot(names(int.step), int.step, type='l', xlab='Interval', ylab='Number of steps', main='Daily average number of steps')
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 
 Interval time which contains the maximum number of steps
 
@@ -92,7 +91,7 @@ total.step <- tapply(activity$steps, activity$date, sum)
 hist(total.step, xlab='Total number of steps per day', main='Histogram of the total number of steps per day')
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
 
 Mean and Median of the total number of steps taken per day after imputing missing data
 
@@ -106,6 +105,16 @@ summary(total.step)
 ```
 
 ## Are there differences in activity patterns between weekdays and weekends?
+Set local language to English (Avoid local language problem)
+
+```r
+Sys.setlocale("LC_ALL","English")
+```
+
+```
+## [1] "LC_COLLATE=English_United States.1252;LC_CTYPE=English_United States.1252;LC_MONETARY=English_United States.1252;LC_NUMERIC=C;LC_TIME=English_United States.1252"
+```
+
 Create factor variable indicating 'weekday' or 'weekend'
 
 ```r

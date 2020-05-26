@@ -4,9 +4,6 @@ output:
   html_document:
     keep_md: true
 ---
-```{r echo=FALSE, results='hide'}
-Sys.setlocale("LC_ALL","English")
-```
 
 ## Loading and preprocessing the data
 ```{r}
@@ -70,6 +67,11 @@ summary(total.step)
 ```
 
 ## Are there differences in activity patterns between weekdays and weekends?
+Set local language to English (Avoid local language problem)
+```{r}
+Sys.setlocale("LC_ALL","English")
+```
+
 Create factor variable indicating 'weekday' or 'weekend'
 ```{r}
 activity$day <- factor(ifelse(weekdays(activity$date) %in% c('Saturday', 'Sunday'), 'weekend', 'weekday'))

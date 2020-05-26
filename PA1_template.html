@@ -416,6 +416,9 @@ hist(total.step, xlab=&#39;Total number of steps per day&#39;, main=&#39;Histogr
 </div>
 <div id="are-there-differences-in-activity-patterns-between-weekdays-and-weekends" class="section level2">
 <h2>Are there differences in activity patterns between weekdays and weekends?</h2>
+<p>Set local language to English (Avoid local language problem)</p>
+<pre class="r"><code>Sys.setlocale(&quot;LC_ALL&quot;,&quot;English&quot;)</code></pre>
+<pre><code>## [1] &quot;LC_COLLATE=English_United States.1252;LC_CTYPE=English_United States.1252;LC_MONETARY=English_United States.1252;LC_NUMERIC=C;LC_TIME=English_United States.1252&quot;</code></pre>
 <p>Create factor variable indicating ‘weekday’ or ‘weekend’</p>
 <pre class="r"><code>activity$day &lt;- factor(ifelse(weekdays(activity$date) %in% c(&#39;Saturday&#39;, &#39;Sunday&#39;), &#39;weekend&#39;, &#39;weekday&#39;))</code></pre>
 <p>Plot the daily average number of steps</p>
